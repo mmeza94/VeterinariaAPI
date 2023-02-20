@@ -11,5 +11,6 @@ namespace VeterinariaAPI.Models
         public string Email { get; set; }
         public DateTime? FechaAlta { get; set; }
         public string Síntomas { get; set; }
+        public int Active { get; set; }
     }
 }

@@ -40,7 +40,7 @@ namespace VeterinariaAPI.Models
 
                 entity.Property(e => e.Email).HasMaxLength(300);
 
-                entity.Property(e => e.FechaAlta).HasColumnType("datetime");
+                entity.Property(e => e.FechaAlta).HasColumnType("datetime").HasDefaultValue(DateTime.Now);
 
                 entity.Property(e => e.NombreMascota)
                     .IsRequired()
@@ -49,6 +49,8 @@ namespace VeterinariaAPI.Models
                 entity.Property(e => e.Propietario)
                     .IsRequired()
                     .HasMaxLength(250);
+
+                entity.Property(e => e.Active).HasDefaultValue(true);
             });
 
             OnModelCreatingPartial(modelBuilder);
